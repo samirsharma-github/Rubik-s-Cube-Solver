@@ -143,6 +143,7 @@ canvas {
     left: 80vw;
     top: 250px;
     background-color: red;
+    color: white;
 }
 
 #vertex3 {
@@ -158,6 +159,7 @@ canvas {
     left: 80vw;
     top: 310px;
     background-color: red;
+    color: white;
 }
 
 #edge5 {
@@ -173,6 +175,7 @@ canvas {
     left: 80vw;
     top: 370px;
     background-color: red;
+    color: white;
 }
 
 #edge7 {
@@ -180,6 +183,7 @@ canvas {
     left: 80vw;
     top: 400px;
     background-color: red;
+    color: white;
 }
 
 #edge8 {
