@@ -22,10 +22,10 @@
     <img src="Rinv.png" id="Rinv" class="img" onclick="turned('R1')">
     <img src="D.png" id="D" class="img" onclick="turned('D')">
     <img src="Dinv.png" id="Dinv" class="img" onclick="turned('D1')">
-    <input type="number" id="shuffleTurns" min="1" placeholder="10">
-    <h6 id="shuffleTurnButton" onclick="shuffled()"></h6>
+    <input type="number" id="shuffleTurns" min="1" placeholder="Number of shuffle turns">
+    <h6 id="shuffleTurnButton" onclick="shuffled()">Enter</h6>
     <button id="unscramble" onclick="reload()">Unscramble</button>
-    <button id="startSolving" onclick="startSolving()" disabled>Let's Start to Solve</button>
+    <button id="startSolving" onclick="startSolving()" disabled>Algorithm used till now:</button>
     <h3 id="startSolvingUndo"></h3>
     <button id="edge1" onclick="edge(0)">Edge1 Solution</button>
     <button id="edge2" onclick="edge(1)" disabled>Edge2 Solution</button>
@@ -256,9 +256,9 @@
             anglex += 0.3 * dx;
             angley += 0.3 * dy;
             camera.position.set(
-                5 * Math.sin(angley * rad) * Math.sin(anglex * rad),
-                5 * Math.cos(angley * rad),
-                5 * Math.sin(angley * rad) * Math.cos(anglex * rad)
+                5 * .sin(angley * rad) * .sin(anglex * rad),
+                5 * .cos(angley * rad),
+                5 * .sin(angley * rad) * .cos(anglex * rad)
             );
             camera.lookAt(0, 0, 0);
             update(myCube);
