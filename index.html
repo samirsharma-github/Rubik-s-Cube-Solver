@@ -10,6 +10,7 @@
 
 <body onmousemove="cordinates(event)">
     <h1 id="button" onclick="start()"></h1>
+    <h1 id"clickme">Press button on left to Shuffle </h1>
     <img src="F.png" id="F" class="img" onclick="turned('F')">
     <img src="Finv.png" id="Finv" class="img" onclick="turned('F1')">
     <img src="B.png" id="B" class="img" onclick="turned('B')">
@@ -256,9 +257,9 @@
             anglex += 0.3 * dx;
             angley += 0.3 * dy;
             camera.position.set(
-                5 * Math.sin(angley * rad) * Math.sin(anglex * rad),
-                5 * Math.cos(angley * rad),
-                5 * Math.sin(angley * rad) * Math.cos(anglex * rad)
+                5 * .sin(angley * rad) * .sin(anglex * rad),
+                5 * .cos(angley * rad),
+                5 * .sin(angley * rad) * .cos(anglex * rad)
             );
             camera.lookAt(0, 0, 0);
             update(myCube);
