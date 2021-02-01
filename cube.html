@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cube</title>
+    <link rel="stylesheet" href="cube.css">
+</head>
+
+<body onmousemove="cordinates(event)">
+    <h1 id="button" onclick="start()"></h1>
+    <img src="img/F.png" id="F" class="img" onclick="turned('F')">
+    <img src="img/Finv.png" id="Finv" class="img" onclick="turned('F1')">
+    <img src="img/B.png" id="B" class="img" onclick="turned('B')">
+    <img src="img/Binv.png" id="Binv" class="img" onclick="turned('B1')">
+    <img src="img/U.png" id="U" class="img" onclick="turned('U')">
+    <img src="img/Uinv.png" id="Uinv" class="img" onclick="turned('U1')">
+    <img src="img/L.png" id="L" class="img" onclick="turned('L')">
+    <img src="img/Linv.png" id="Linv" class="img" onclick="turned('L1')">
+    <img src="img/R.png" id="R" class="img" onclick="turned('R')">
+    <img src="img/Rinv.png" id="Rinv" class="img" onclick="turned('R1')">
+    <img src="img/D.png" id="D" class="img" onclick="turned('D')">
+    <img src="img/Dinv.png" id="Dinv" class="img" onclick="turned('D1')">
+    <input type="number" id="shuffleTurns" min="1" placeholder="10">
+    <h6 id="shuffleTurnButton" onclick="shuffled()"></h6>
+    <button id="unscramble" onclick="reload()">Unscramble</button>
+    <button id="startSolving" onclick="startSolving()" disabled>Let's Start to Solve</button>
+    <h3 id="startSolvingUndo"></h3>
+    <button id="edge1" onclick="edge(0)">Edge1 Solution</button>
+    <button id="edge2" onclick="edge(1)" disabled>Edge2 Solution</button>
+    <button id="edge3" onclick="edge(2)" disabled>Edge3 Solution</button>
+    <button id="edge4" onclick="edge(3)" disabled>Edge4 Solution</button>
+    <button id="edge5" onclick="edge(8)" disabled>Edge5 Solution</button>
+    <button id="edge6" onclick="edge(9)" disabled>Edge6 Solution</button>
+    <button id="edge7" onclick="edge(10)" disabled>Edge7 Solution</button>
+    <button id="edge8" onclick="edge(11)" disabled>Edge8 Solution</button>
+    <button id="vertex1" onclick="edge(4)" disabled>Vertex1 Solution</button>
+    <button id="vertex2" onclick="edge(5)" disabled>Vertex2 Solution</button>
+    <button id="vertex3" onclick="edge(6)" disabled>Vertex3 Solution</button>
+    <button id="vertex4" onclick="edge(7)" disabled>Vertex4 Solution</button>
+    <button id="Plus" onclick="edge(12)" disabled>Upper Plus Solution</button>
+    <button id="PlusAlign" onclick="edge(13)" disabled>Upper Plus align Solution</button>
+    <button id="vertex" onclick="edge(14)" disabled>Upper Vertex Solution</button>
+    <button id="vertexAlign" onclick="edge(15)" disabled>Upper vertex3 align Solution</button>
+
+    <button id="solveParts" onclick="edge(100)"></button>
+    <script>
+        var i = 0;
+    </script>
+    <script src="threemin.js"></script>
+    <script src="cube.js"></script>
+    <script src="refCube.js"></script>
+    <script src="cubeRotation.js"></script>
+    <script src="edge1.js"></script>
+    <script src="edge2.js"></script>
+    <script src="edge3.js"></script>
+    <script src="edge4.js"></script>
+    <script src="edge5.js"></script>
+    <script src="edge6.js"></script>
+    <script src="edge7.js"></script>
+    <script src="edge8.js"></script>
+    <script src="vertex1.js"></script>
+    <script src="vertex2.js"></script>
+    <script src="vertex3.js"></script>
+    <script src="vertex4.js"></script>
+    <script src="makePlus.js"></script>
+    <script src="correctPlus.js"></script>
+    <script src="correctUpperVertices.js"></script>
+    <script src="alignUpperVertices.js"></script>
+
+    <script>
+        anglex = 45;
+        angley = 45;
+        var toTurn;
+        var undoSol = "";
+
+        function reload() {
+            location.reload();
+        }
+
+        function startSolving() {
+            document.getElementById("startSolvingUndo").innerHTML = undoSol;
+        }
+
+        function shuffled() {
+            toTurn = shuffle(document.getElementById("shuffleTurns").value);
+            document.getElementById("button").innerHTML = toTurn[0];
+        }
+
+        function turned(a) {
+            if (a.length == 1) {
+                myCube = turn(a);
+                undoSol += a;
+                undoSol += " ";
+            } else {
+                a = a[0];
+                a += "'";
+                myCube = turn(a)
+                undoSol += a;
+                undoSol += " ";
+            }
+            document.getElementById("startSolving").disabled = false;
+        }
+
+        function start() {
+            document.getElementById("button").innerHTML = toTurn[i + 1];
+            myCube = turn(toTurn[i]);
+            ++i;
+            document.getElementById("startSolving").disabled = false;
+            undoSol += toTurn[i];
+            undoSol += " ";
+        }
+
+        function edge(a) {
+            if (a == 0) {
+                undoSol = "";
+                console.log(solveEdge1(myCube));
+                toTurn = solveEdge1(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("edge1").disabled = true;
+                document.getElementById("edge2").disabled = false;
+            }
+            if (a == 1) {
+                console.log(solveEdge2(myCube));
+                toTurn = solveEdge2(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("edge2").disabled = true;
+                document.getElementById("edge3").disabled = false;
+            }
+            if (a == 2) {
+                console.log(solveEdge3(myCube));
+                toTurn = solveEdge3(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("edge3").disabled = true;
+                document.getElementById("edge4").disabled = false;
+            }
+            if (a == 3) {
+                console.log(solveEdge4(myCube));
+                toTurn = solveEdge4(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("edge4").disabled = true;
+                document.getElementById("vertex1").disabled = false;
+            }
+            if (a == 4) {
+                console.log(solveVertex1(myCube));
+                toTurn = solveVertex1(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("vertex1").disabled = true;
+                document.getElementById("vertex2").disabled = false;
+            }
+            if (a == 5) {
+                console.log(solveVertex2(myCube));
+                toTurn = solveVertex2(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("vertex2").disabled = true;
+                document.getElementById("vertex3").disabled = false;
+            }
+            if (a == 6) {
+                console.log(solveVertex3(myCube));
+                toTurn = solveVertex3(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("vertex3").disabled = true;
+                document.getElementById("vertex4").disabled = false;
+            }
+            if (a == 7) {
+                console.log(solveVertex4(myCube));
+                toTurn = solveVertex4(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("vertex4").disabled = true;
+                document.getElementById("edge5").disabled = false;
+            }
+            if (a == 8) {
+                console.log(solveEdge5(myCube));
+                toTurn = solveEdge5(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("edge5").disabled = true;
+                document.getElementById("edge6").disabled = false;
+            }
+            if (a == 9) {
+                console.log(solveEdge6(myCube));
+                toTurn = solveEdge6(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("edge6").disabled = true;
+                document.getElementById("edge7").disabled = false;
+            }
+            if (a == 10) {
+                console.log(solveEdge7(myCube));
+                toTurn = solveEdge7(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("edge7").disabled = true;
+                document.getElementById("edge8").disabled = false;
+            }
+            if (a == 11) {
+                console.log(solveEdge8(myCube));
+                toTurn = solveEdge8(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("edge8").disabled = true;
+                document.getElementById("Plus").disabled = false;
+            }
+            if (a == 12) {
+                console.log(makePlus(myCube));
+                toTurn = makePlus(myCube).split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                document.getElementById("Plus").disabled = true;
+                document.getElementById("PlusAlign").disabled = false;
+            }
+            if (a == 13) {
+                let pass = false;
+                [toTurn, pass] = correctPlus(myCube);
+                console.log(toTurn);
+                toTurn = toTurn.split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                if (pass == true) {
+                    document.getElementById("PlusAlign").disabled = true;
+                    document.getElementById("vertex").disabled = false;
+                }
+            }
+            if (a == 14) {
+                let pass = false;
+                [toTurn, pass] = correctUpperVertices(myCube);
+                console.log(toTurn);
+                toTurn = toTurn.split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                if (pass == true) {
+                    document.getElementById("vertex").disabled = true;
+                    document.getElementById("vertexAlign").disabled = false;
+                }
+            }
+            if (a == 15) {
+                let pass = false;
+                [toTurn, pass] = upperVerticesSolver(myCube);
+                console.log(toTurn);
+                toTurn = toTurn.split(" ");
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+                if (pass == true) {
+                    document.getElementById("vertexAlign").disabled = true;
+                    console.log("Ho gaya solve");
+                }
+            }
+            if (a == 100) {
+                myCube = turn(toTurn[0]);
+                undoSol += toTurn[0];
+                undoSol += " ";
+                toTurn.shift();
+                document.getElementById("solveParts").innerHTML = toTurn[0];
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            anglex += 0.3 * dx;
+            angley += 0.3 * dy;
+            camera.position.set(
+                5 * Math.sin(angley * rad) * Math.sin(anglex * rad),
+                5 * Math.cos(angley * rad),
+                5 * Math.sin(angley * rad) * Math.cos(anglex * rad)
+            );
+            camera.lookAt(0, 0, 0);
+            update(myCube);
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+
+</html>

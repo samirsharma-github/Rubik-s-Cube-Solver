@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+}
+
+canvas {
+    display: block;
+}
+
+#button {
+    position: absolute;
+    /* width: 87px;
+    height: 100px; */
+    top: 120px;
+    background-color: red;
+    left: 10px;
+    text-align: center;
+}
+
+#Finv {
+    left: 5vw;
+}
+
+#B {
+    left: 10vw;
+}
+
+#Binv {
+    left: 15vw;
+}
+
+#R {
+    left: 20vw;
+}
+
+#Rinv {
+    left: 25vw;
+}
+
+#L {
+    left: 30vw;
+}
+
+#Linv {
+    left: 35vw;
+}
+
+#U {
+    left: 40vw;
+}
+
+#Uinv {
+    left: 45vw;
+}
+
+#D {
+    left: 50vw;
+}
+
+#Dinv {
+    left: 55vw;
+}
+
+#shuffleTurns {
+    position: absolute;
+    left: 10px;
+    top: 100px;
+}
+
+#shuffleTurnButton {
+    position: absolute;
+    left: 200px;
+    top: 77px;
+    width: 30px;
+    height: 20px;
+    background-color: pink;
+}
+
+.img {
+    position: absolute;
+}
+
+#unscramble {
+    position: absolute;
+    top: 250px;
+    left: 10px;
+}
+
+#startSolving {
+    position: absolute;
+    top: 285px;
+    left: 10px;
+}
+
+#startSolvingUndo {
+    position: absolute;
+    left: 10px;
+    top: 300px;
+    background-color: red;
+}
+
+#edge1 {
+    position: absolute;
+    left: 80vw;
+    top: 100px;
+    background-color: red;
+}
+
+#edge2 {
+    position: absolute;
+    left: 80vw;
+    top: 130px;
+    background-color: red;
+}
+
+#edge3 {
+    position: absolute;
+    left: 80vw;
+    top: 160px;
+    background-color: red;
+}
+
+#edge4 {
+    position: absolute;
+    left: 80vw;
+    top: 190px;
+    background-color: red;
+}
+
+#vertex1 {
+    position: absolute;
+    left: 80vw;
+    top: 220px;
+    background-color: red;
+}
+
+#vertex2 {
+    position: absolute;
+    left: 80vw;
+    top: 250px;
+    background-color: red;
+}
+
+#vertex3 {
+    position: absolute;
+    left: 80vw;
+    top: 280px;
+    background-color: red;
+}
+
+#vertex4 {
+    position: absolute;
+    left: 80vw;
+    top: 310px;
+    background-color: red;
+}
+
+#edge5 {
+    position: absolute;
+    left: 80vw;
+    top: 340px;
+    background-color: red;
+}
+
+#edge6 {
+    position: absolute;
+    left: 80vw;
+    top: 370px;
+    background-color: red;
+}
+
+#edge7 {
+    position: absolute;
+    left: 80vw;
+    top: 400px;
+    background-color: red;
+}
+
+#edge8 {
+    position: absolute;
+    left: 80vw;
+    top: 430px;
+    background-color: red;
+}
+
+#Plus {
+    position: absolute;
+    left: 80vw;
+    top: 460px;
+    background-color: red;
+}
+
+#PlusAlign {
+    position: absolute;
+    left: 80vw;
+    top: 490px;
+    background-color: red;
+}
+
+#vertex {
+    position: absolute;
+    left: 80vw;
+    top: 520px;
+    background-color: red;
+}
+
+#vertexAlign {
+    position: absolute;
+    left: 80vw;
+    top: 550px;
+    background-color: red;
+}
+
+#solveParts {
+    position: absolute;
+    left: 80vw;
+    top: 580px;
+    background-color: red;
+}
