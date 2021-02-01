@@ -10,18 +10,18 @@
 
 <body onmousemove="cordinates(event)">
     <h1 id="button" onclick="start()"></h1>
-    <img src="img/F.png" id="F" class="img" onclick="turned('F')">
-    <img src="img/Finv.png" id="Finv" class="img" onclick="turned('F1')">
-    <img src="img/B.png" id="B" class="img" onclick="turned('B')">
-    <img src="img/Binv.png" id="Binv" class="img" onclick="turned('B1')">
-    <img src="img/U.png" id="U" class="img" onclick="turned('U')">
-    <img src="img/Uinv.png" id="Uinv" class="img" onclick="turned('U1')">
-    <img src="img/L.png" id="L" class="img" onclick="turned('L')">
-    <img src="img/Linv.png" id="Linv" class="img" onclick="turned('L1')">
-    <img src="img/R.png" id="R" class="img" onclick="turned('R')">
-    <img src="img/Rinv.png" id="Rinv" class="img" onclick="turned('R1')">
-    <img src="img/D.png" id="D" class="img" onclick="turned('D')">
-    <img src="img/Dinv.png" id="Dinv" class="img" onclick="turned('D1')">
+    <img src="F.png" id="F" class="img" onclick="turned('F')">
+    <img src="Finv.png" id="Finv" class="img" onclick="turned('F1')">
+    <img src="B.png" id="B" class="img" onclick="turned('B')">
+    <img src="Binv.png" id="Binv" class="img" onclick="turned('B1')">
+    <img src="U.png" id="U" class="img" onclick="turned('U')">
+    <img src="Uinv.png" id="Uinv" class="img" onclick="turned('U1')">
+    <img src="L.png" id="L" class="img" onclick="turned('L')">
+    <img src="Linv.png" id="Linv" class="img" onclick="turned('L1')">
+    <img src="R.png" id="R" class="img" onclick="turned('R')">
+    <img src="Rinv.png" id="Rinv" class="img" onclick="turned('R1')">
+    <img src="D.png" id="D" class="img" onclick="turned('D')">
+    <img src="Dinv.png" id="Dinv" class="img" onclick="turned('D1')">
     <input type="number" id="shuffleTurns" min="1" placeholder="10">
     <h6 id="shuffleTurnButton" onclick="shuffled()"></h6>
     <button id="unscramble" onclick="reload()">Unscramble</button>
@@ -252,9 +252,9 @@
             anglex += 0.3 * dx;
             angley += 0.3 * dy;
             camera.position.set(
-                5 * Math.sin(angley * rad) * Math.sin(anglex * rad),
-                5 * Math.cos(angley * rad),
-                5 * Math.sin(angley * rad) * Math.cos(anglex * rad)
+                5 * .sin(angley * rad) * .sin(anglex * rad),
+                5 * .cos(angley * rad),
+                5 * .sin(angley * rad) * .cos(anglex * rad)
             );
             camera.lookAt(0, 0, 0);
             update(myCube);
