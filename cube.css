@@ -103,6 +103,7 @@ canvas {
     left: 80vw;
     top: 100px;
     background-color: red;
+    color: white;
 }
 
 #edge2 {
@@ -110,6 +111,7 @@ canvas {
     left: 80vw;
     top: 130px;
     background-color: red;
+    color: white;
 }
 
 #edge3 {
@@ -117,6 +119,7 @@ canvas {
     left: 80vw;
     top: 160px;
     background-color: red;
+    color: white;
 }
 
 #edge4 {
@@ -124,6 +127,7 @@ canvas {
     left: 80vw;
     top: 190px;
     background-color: red;
+    color: white;
 }
 
 #vertex1 {
@@ -131,6 +135,7 @@ canvas {
     left: 80vw;
     top: 220px;
     background-color: red;
+    color: white;
 }
 
 #vertex2 {
@@ -145,6 +150,7 @@ canvas {
     left: 80vw;
     top: 280px;
     background-color: red;
+    color: white;
 }
 
 #vertex4 {
@@ -159,6 +165,7 @@ canvas {
     left: 80vw;
     top: 340px;
     background-color: red;
+    color: white;
 }
 
 #edge6 {
@@ -180,6 +187,7 @@ canvas {
     left: 80vw;
     top: 430px;
     background-color: red;
+    color: white;
 }
 
 #Plus {
@@ -187,6 +195,7 @@ canvas {
     left: 80vw;
     top: 460px;
     background-color: red;
+    color: white;
 }
 
 #PlusAlign {
@@ -194,6 +203,7 @@ canvas {
     left: 80vw;
     top: 490px;
     background-color: red;
+    color: white;
 }
 
 #vertex {
@@ -201,6 +211,7 @@ canvas {
     left: 80vw;
     top: 520px;
     background-color: red;
+    color: white;
 }
 
 #vertexAlign {
@@ -208,6 +219,7 @@ canvas {
     left: 80vw;
     top: 550px;
     background-color: red;
+    color: white;
 }
 
 #solveParts {
@@ -215,4 +227,5 @@ canvas {
     left: 80vw;
     top: 580px;
     background-color: red;
+    color: white;
 }
